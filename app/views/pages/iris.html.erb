@@ -1,0 +1,27 @@
+<h1>IRIS Flowers</h1>
+<%= link_to 'Sort by SL', pages_sort_by_sepal_length_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>SL</th>
+      <th>SW</th>
+      <th>PL</th>
+      <th>PW</th>
+      <th>S</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @flowers.each do |flower|%>
+    <tr>
+      <td><%= flower.sepal_length%></td>
+      <td><%= flower.sepal_width%></td>
+      <td><%= flower.petal_length%></td>
+      <td><%= flower.petal_width %></td>
+      <td><%= flower.species%></td>
+      <td><%# link_to "Edit", %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

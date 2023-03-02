@@ -19,8 +19,14 @@
       <td><%= flower.petal_length%></td>
       <td><%= flower.petal_width %></td>
       <td><%= flower.species%></td>
-      <td><%= link_to "Edit", %></td>
+      <td><%= link_to "Edit", edit_flower_path(flower) %></td>
     </tr>
+
+    <% unless flower.notes.blank? %>
+      <tr>
+        <td colspan="6"><%= flower.notes %></td>
+      </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>

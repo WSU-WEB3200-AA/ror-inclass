@@ -1,2 +1,39 @@
-<h1>Flowers#edit</h1>
-<p>Find me in app/views/flowers/edit.html.erb</p>
+<h1>Editing an exising flower</h1>
+<%= form_with(model: @flower) do |form|%>
+
+  <div>
+    <%= form.label :sepal_length, class: "form-label"%>
+    <%= form.number_field :sepal_length, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :sepal_width, class: "form-label"%>
+    <%= form.number_field :sepal_width, class: "form-control" %>
+  </div>
+
+  <div>
+  <%= form.label :petal_length, class: "form-label"%>
+  <%= form.number_field :petal_length, class: "form-control" %>
+  </div>
+
+  <div>
+  <%= form.label :petal_width, class: "form-label"%>
+  <%= form.number_field :petal_width, class: "form-control" %>
+  </div>
+
+
+  <div>
+  <%= form.label :species, class: "form-label"%>
+  <%= form.text_field :species, class: "form-control" %>
+  </div>
+
+  <div>
+  <%= form.label :notes, class: "form-label"%>
+  <%= form.rich_text_area :notes %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+  <%= link_to "Cancel", flowers_path, class: "btn btn-secondary"%>
+
+<% end %>
+
